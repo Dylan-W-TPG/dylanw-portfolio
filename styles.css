@@ -53,16 +53,12 @@ nav > a:active {
     background-color: green;
 }
 
-.bars {
+#hamburger-icon {
     display: none;
-    padding: 15px 20px 8px 0px;
-}
-
-.bars div {
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
+    width: 38px;
+    height: auto;
+    padding: 15px 15px 8px 15px;
+    cursor: pointer;
 }
 
 body {
@@ -104,7 +100,7 @@ section p {
         display: none;
     }
 
-    .bars {
+    #hamburger-icon {
         display: inline-block;
     }
     

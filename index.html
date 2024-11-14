@@ -7,18 +7,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#hamburger-icon').on('click', function() {
+                if ($('nav a').css('display') == 'block') {
+                    $('nav a').css('display', 'none');
+                } else {
+                    $('nav a').css('display', 'block');
+                }
+            });
+
+            $(document).mouseup(function(e) {
+                if (!$('#hamburger-icon').is(e.target) && !$('nav').is(e.target) && !$('nav a').is(e.target)) {
+                    $('nav a').css('display', 'none');
+                }
+            });
+
+            $(window).on('resize', function() {
+                if ($(this).width() >= 600) {
+                    $('nav a').css('display', 'inline-block');
+                } else {
+                    $('nav a').css('display', 'none');
+                }
+            })
+        });
+    </script>
 </head>
 <body>
     <nav>
+        <img src="images/Hamburger_icon.svg" id="hamburger-icon">
         <a href="#">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Game Projects</a>
         <a href="#contacts">Contacts</a>
-        <span class="bars">
-            <div></div>
-            <div></div>
-            <div></div>
-        </span>
     </nav>
     <header>
         <h1>Dylan Wijesinghe</h1>
