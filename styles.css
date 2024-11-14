@@ -10,28 +10,91 @@
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
+    text-align: center;
 }
 
 header {
-    background-color: grey;
+    background-color: rgb(23, 53, 22);
+    color: white;
 }
 
 header h1 {
-    text-align: center;
-    padding: 40px;
+    padding-top: 40px;
     padding-bottom: 30px;
     font-size: 85px;
     font-weight: 800;
 }
 
 header h2 {
-    text-align: center;
     padding-bottom: 45px;
     font-size: 45px;
     font-weight: 650;
 }
 
+nav {
+    background-color: lightgreen;
+    position: sticky;
+    top: 0px;
+}
+
+nav > a {
+    display: inline-block;
+    padding: 20px;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+nav > a:hover {
+    background-color: rgb(86, 209, 86);
+}
+
+nav > a:active {
+    background-color: green;
+}
+
+body {
+    background-color: rgb(237, 248, 237);
+}
+
 section {
-    padding: 30px;
-    font-size: 20px;
+    padding: 50px 50px;
+}
+
+section h1 {
+    font-size: 50px;
+}
+
+section p {
+    padding-top: 30px;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 600px) {
+    header h1 {
+        padding-top: 40px;
+        padding-bottom: 30px;
+        font-size: 10vw;
+        font-weight: 800;
+    }
+    
+    header h2 {
+        padding-bottom: 45px;
+        font-size: 5.5vw;
+        font-weight: 650;
+    }
+    
+    nav a {
+        display: block;
+        padding: 15px;
+        font-size: 20px;
+    }
+    
+    section h1 {
+        font-size: 40px;
+    }
+
+    section p {
+        font-size: 20px;
+    }
 }
