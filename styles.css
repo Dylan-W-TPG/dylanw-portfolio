@@ -55,7 +55,7 @@ nav > a:active {
 
 .bars {
     display: none;
-    padding: 20px;
+    padding: 15px 20px 8px 0px;
 }
 
 .bars div {
@@ -70,7 +70,7 @@ body {
 }
 
 section {
-    padding: 50px 50px;
+    padding: 50px 0px 50px 0px;
 }
 
 section h1 {
