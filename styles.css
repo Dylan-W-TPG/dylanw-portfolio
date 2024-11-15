@@ -7,7 +7,6 @@
     background: transparent;
     font-family: Arial, Helvetica, sans-serif;
     font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
     text-align: center;
@@ -65,20 +64,27 @@ body {
     background-color: rgb(237, 248, 237);
 }
 
-section {
-    padding: 50px 0px 50px 0px;
+h2 {
+    font-size: 50px;
 }
 
-section h1 {
-    font-size: 50px;
+p {
+    font-size: 25px;
+}
+
+section {
+    padding: 50px 15px 50px 15px;
+}
+
+#intro h2 {
+    font-size: 32px;
 }
 
 section p {
     padding-top: 30px;
-    font-size: 25px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     header h1 {
         padding-top: 40px;
         padding-bottom: 30px;
@@ -104,11 +110,15 @@ section p {
         display: inline-block;
     }
     
-    section h1 {
+    h2 {
         font-size: 40px;
     }
 
-    section p {
+    p {
         font-size: 20px;
+    }
+
+    #intro h2 {
+        font-size: 25px;
     }
 }

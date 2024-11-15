@@ -1,62 +1,78 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dylan W's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <script src="jquery-3.7.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#hamburger-icon').on('click', function() {
-                if ($('nav a').css('display') == 'block') {
-                    $('nav a').css('display', 'none');
-                } else {
-                    $('nav a').css('display', 'block');
-                }
-            });
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dylan W's Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <script src="jquery-3.7.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var mobilesize = false;
+                
+                $('#hamburger-icon').on('click', function() {
+                    if ($('nav a').css('display') == 'block') {
+                        $('nav a').css('display', 'none');
+                    } else {
+                        $('nav a').css('display', 'block');
+                    }
+                });
 
-            $(document).mouseup(function(e) {
-                if (!$('#hamburger-icon').is(e.target) && !$('nav').is(e.target) && !$('nav a').is(e.target)) {
-                    $('nav a').css('display', 'none');
-                }
-            });
+                $(document).mouseup(function(e) {
+                    if (!$('#hamburger-icon').is(e.target) && !$('nav').is(e.target) && !$('nav a').is(e.target) && mobilesize) {
+                        $('nav a').css('display', 'none');
+                    }
+                });
 
-            $(window).on('resize', function() {
-                if ($(this).width() >= 600) {
-                    $('nav a').css('display', 'inline-block');
-                } else {
-                    $('nav a').css('display', 'none');
+                $(window).on('resize', function() {
+                    responsiveSizing();
+                })
+
+                function responsiveSizing() {
+                    if ($(window).outerWidth(true) > 800) {
+                        $('nav a').css('display', 'inline-block');
+                        mobilesize = false;
+                    } else {
+                        $('nav a').css('display', 'none');
+                        mobilesize = true;
+                    }
                 }
-            })
-        });
-    </script>
-</head>
-<body>
-    <nav>
-        <img src="images/Hamburger_icon.svg" id="hamburger-icon">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Game Projects</a>
-        <a href="#contacts">Contacts</a>
-    </nav>
-    <header>
-        <h1>Dylan Wijesinghe</h1>
-        <h2>Game Developer & Programmer</h2> 
-    </header>
-    <section id="about">
-        <h1>About</h1>
-        <p>I'm hosted with GitHub Pages.</p>
-    </section>
-    <section id="projects">
-        <h1>Game Projects</h1>
-        <p>I'm hosted with GitHub Pages.</p>
-    </section>
-    <section id="contacts">
-        <h1>Contacts</h1>
-        <p>I'm hosted with GitHub Pages.</p>
-    </section>
-</body>
+
+                responsiveSizing();
+            });
+        </script>
+    </head>
+    <body>
+        <nav>
+            <img src="images/Hamburger_icon.svg" alt="Menu Icon" id="hamburger-icon">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Game Projects</a>
+            <a href="#contacts">Contacts</a>
+        </nav>
+        <header>
+            <h1>Dylan Wijesinghe</h1>
+            <h2>Game Developer & Programmer</h2> 
+        </header>
+        <section id="intro">
+            <h2>This portfolio will continue to grow and change over the years as I will dedicate to showcasing my best projects and efforts.</h2>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>I am a game developer and programmer with over 15 years of experience in gaming and 3 years of experience in game development.</p>
+            <p>I have a huge passion in creating various games and will always strive to problem-solve with coding.</p>
+            <p>I am going to graduate from university this year to receive my Bachelor Degree of Game Design and Development, and continue to study for a Graduate Certificate on Information Technology to learn about cybersecurity and other various IT fields.</p>
+        </section>
+        <section id="projects">
+            <h2>Game Projects</h2>
+            <p>I'm hosted with GitHub Pages.</p>
+        </section>
+        <section id="contacts">
+            <h2>Contacts</h2>
+            <p>I'm hosted with GitHub Pages.</p>
+        </section>
+    </body>
 </html>
